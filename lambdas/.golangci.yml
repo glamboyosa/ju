@@ -1,0 +1,10 @@
+ linters:
+     enable:
+       - govet
+       - errcheck
+       - staticcheck
+       - gofmt
+       - goimports
+       - golint
+   run:
+     tests: true

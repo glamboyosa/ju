@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  FiberLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: lambdas/main
+      Runtime: go1.x
+      CodeUri: .
+      MemorySize: 128
+      Timeout: 15
+      Policies: AWSLambdaBasicExecutionRole
+      Events:
+        Proxy:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+Outputs:
+  ApiUrl:
+    Description: "API Gateway endpoint URL for Prod stage"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+    Export:
+      Name: ApiGatewayEndpoint

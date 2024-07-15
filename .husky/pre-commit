@@ -1,0 +1,7 @@
+#!/bin/sh
+# husky
+
+(cd web && pnpm lint && pnpm lf)
+
+# Change to the parent directory and then to 'extension', and run pnpm lint
+#(cd extension && pnpm lint && pnpm lf)

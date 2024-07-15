@@ -1,0 +1,51 @@
+{
+  "name": "chrome-extension-boilerplate-react-vite",
+  "version": "0.0.1",
+  "description": "chrome extension boilerplate",
+  "license": "MIT",
+  "repository": {
+    "type": "git"
+  },
+  "scripts": {
+    "clean": "rimraf dist && turbo clean",
+    "build": "turbo build",
+    "lint": " pnpm biome lint --write --unsafe .",
+    "lf": "pnpm biome check --unsafe .",
+    "build:firefox": "cross-env __FIREFOX__=true turbo build",
+    "dev-server": "pnpm -F hmr ready && pnpm -F hmr dev",
+    "dev": "turbo ready && turbo watch dev --concurrency 20",
+    "dev:firefox": "turbo ready && cross-env __FIREFOX__=true turbo watch dev --concurrency 20",
+    "test": "turbo test",
+    "type-check": "turbo type-check",
+    "lint:fix": "turbo lint:fix --continue -- --fix --cache --cache-location node_modules/.cache/.eslintcache"
+  },
+  "type": "module",
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@types/chrome": "^0.0.268",
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
+    "@vitejs/plugin-react-swc": "^3.6.0",
+    "autoprefixer": "^10.4.19",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.4.38",
+    "prettier": "^3.3.2",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^3.4.4",
+    "tslib": "^2.6.3",
+    "turbo": "^2.0.6",
+    "typescript": "5.5.3",
+    "vite": "5.3.3"
+  },
+  "packageManager": "pnpm@9.5.0",
+  "engines": {
+    "node": ">=18.12.0"
+  }
+}
