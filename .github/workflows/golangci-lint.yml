@@ -23,7 +23,7 @@ jobs:
           go-version: stable
 
       - name: Install dependencies
-        run: go mod tidy
+        run: cd lambdas && go mod tidy
 
     #   - name: Run tests
     #     run: go test ./...
