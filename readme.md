@@ -1,6 +1,6 @@
-# Ju
+# Jū
 
-Ju is an app that improves the writing, grammar of the users via AI.
+Jū (Japanese for "10") improves your writing with advanced grammar correction and style enhancements. It integrates seamlessly into your workflow, helping you refine everything from technical documents to creative writing.
 
 ## Motivation
 
