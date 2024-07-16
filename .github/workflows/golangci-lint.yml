@@ -45,3 +45,4 @@ jobs:
         with:
           version: v1.59
           working-directory: ./lambdas
+          args: --config ./.golangci.yml

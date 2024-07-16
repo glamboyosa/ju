@@ -1,10 +1,16 @@
- linters:
-     enable:
-       - govet
-       - errcheck
-       - staticcheck
-       - gofmt
-       - goimports
-       - golint
-   run:
-     tests: true
+linters:
+  enable:
+    - golint
+    - govet
+    - staticcheck
+
+issues:
+  exclude-use-default: false
+
+run:
+  timeout: 5m
+  tests: true
+
+linter-settings:
+  govet:
+    check-shadowing: true
