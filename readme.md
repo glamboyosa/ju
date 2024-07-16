@@ -15,9 +15,9 @@ While writing technical deep dives, I struggled with grammar and clarity. Peer r
 ## Stack
 
 - **Web Application**: Next.js (React) with `biome.json` for code quality and GitHub Actions for CI/CD.
-- **Backend**: AWS Lambda (Go), AWS API Gateway, DynamoDB for storage.
+- **Backend**: AWS Lambda (Go), AWS API Gateway.
 - **Chrome Extension**: React, integrated with the web application's backend.
-- **Infrastructure**: AWS SAM for serverless deployment, AWS CDK for infrastructure as code.
+- **Infrastructure**: AWS SAM for serverless deployment, Vercel for frontend deployment and PostgreSQL on Supabase.
 - **CI/CD**: GitHub Actions for automated testing, linting, and deployment.
 
 ## Getting Started
