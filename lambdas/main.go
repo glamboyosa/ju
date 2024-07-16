@@ -16,8 +16,7 @@ var fiberLambda *fiberadapter.FiberLambda
 // init the Fiber Server
 func init() {
 	log.Printf("Fiber cold start")
-	var app *fiber.App
-	app = fiber.New()
+	var app *fiber.App = fiber.New()
 
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("Hello, World!")
