@@ -15,4 +15,4 @@ jobs:
         with:
           version: latest
       - name: Run Biome
-        run: biome ci ./web/src
+        run: biome ci ./web/src --config ./web/biome.json
