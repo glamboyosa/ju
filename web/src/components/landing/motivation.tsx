@@ -52,7 +52,7 @@ const Motivation = () => {
 					clarity
 				</span>
 				. Peer reviews{" "}
-				<span ref={s4} className="s4">
+				<span ref={s4} className="s4 text-xs lg:text-base">
 					highlighted these issues
 				</span>
 				, and as a non-copywriter, I found it challenging to improve. Using AI
