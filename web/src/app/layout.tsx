@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
 import Nav from "@/components/nav/nav";
 import { marker } from "@/lib/font";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
 	title: "Jū",
@@ -18,7 +19,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={marker.className}>
+			<body
+				className={cn(
+					marker.className,
+					"bg-white text-white dark:bg-black dark:text-white",
+				)}
+			>
 				<ThemeProvider attribute="class">
 					<Nav />
 					{children}

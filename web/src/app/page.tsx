@@ -1,6 +1,7 @@
 import { Faqs } from "@/components/landing/faqs";
 import Heading from "@/components/landing/heading";
 import Motivation from "@/components/landing/motivation";
+import PricingSection from "@/components/landing/pricing";
 
 export default function Home() {
 	return (
@@ -12,6 +13,7 @@ export default function Home() {
 				Perfect for any audience, every time.
 			</p>
 			<Motivation />
+			<PricingSection />
 			<Faqs />
 		</main>
 	);
