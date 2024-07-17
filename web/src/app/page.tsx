@@ -1,5 +1,6 @@
-import Heading from "@/components/heading/heading";
-import Motivation from "@/components/heading/motivation";
+import { Faqs } from "@/components/landing/faqs";
+import Heading from "@/components/landing/heading";
+import Motivation from "@/components/landing/motivation";
 
 export default function Home() {
 	return (
@@ -11,6 +12,7 @@ export default function Home() {
 				Perfect for any audience, every time.
 			</p>
 			<Motivation />
+			<Faqs />
 		</main>
 	);
 }
