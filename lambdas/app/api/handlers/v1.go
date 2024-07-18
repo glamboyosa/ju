@@ -30,11 +30,11 @@ func Generate() fiber.Handler {
 			})
 		}
 		return c.JSON(fiber.Map{
-			"status": "Success",
+			"status":  "Success",
 			"message": "Expected text",
-				"data":    []string{
-					body.Text,
-				},
+			"data": []string{
+				body.Text,
+			},
 		})
 	}
 }
