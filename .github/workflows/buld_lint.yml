@@ -6,9 +6,8 @@ on:
   pull_request:
 
 permissions:
-  contents: read
-  # Optional: allow read access to pull request. Use with `only-new-issues` option.
-  # pull-requests: read
+  contents: write
+  pull-requests: read
 
 jobs:
   build:
@@ -25,8 +24,16 @@ jobs:
       - name: Install dependencies
         run: cd lambdas && go mod tidy
 
-    #   - name: Run tests
-    #     run: go test ./...
+      - name: Run gofmt
+        run: gofmt -s -w .
+
+      - name: Commit formatted code
+        run: |
+          git config --global user.name 'glamboyosa'
+          git config --global user.email 'ogbemudiatimothy@gmail.com'
+          git add .
+          git commit -m "Format code with gofmt"
+          git push
 
   golangci:
     name: Lint
