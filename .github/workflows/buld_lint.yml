@@ -31,7 +31,7 @@ jobs:
         run: |
           git config --global user.name 'glamboyosa'
           git config --global user.email 'ogbemudiatimothy@gmail.com'
-          git pull origin ${{ github.head_ref }}
+          git pull origin ${{ github.head_ref }} --rebase
           git add .
           git commit -m "Format code with gofmt"
           git push origin HEAD:${{ github.head_ref }}
