@@ -22,7 +22,7 @@ jobs:
           go-version: stable
 
       - name: Install dependencies
-        run: cd lambdas && go mod tidy
+        run: cd lambdas && cd app && go mod tidy
 
       - name: Run gofmt
         run: gofmt -s -w .
