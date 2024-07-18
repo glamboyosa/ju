@@ -33,7 +33,7 @@ jobs:
           git config --global user.email 'ogbemudiatimothy@gmail.com'
           git add .
           git commit -m "Format code with gofmt"
-          git push
+          git push origin HEAD:${{ github.head_ref }}
 
   golangci:
     name: Lint
