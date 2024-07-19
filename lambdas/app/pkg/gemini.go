@@ -15,6 +15,7 @@ func Gemini() *genai.GenerativeModel {
 	client, err := genai.NewClient(ctx, option.WithAPIKey(os.Getenv("API_KEY")))
 	if err != nil {
 		log.Fatal(err)
+		panic("Something went wrong")
 	}
 	defer client.Close()
 

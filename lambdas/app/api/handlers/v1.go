@@ -23,7 +23,7 @@ func Generate() fiber.Handler {
 			})
 		}
 		if body.Text == "" {
-			c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+				return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 				"status":  "Error",
 				"message": "Expected text",
 				"data":    []string{},
