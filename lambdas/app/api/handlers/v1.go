@@ -18,7 +18,7 @@ func Hello() fiber.Handler {
 func Generate() fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		ctx := context.Background()
-		_, _, err :=pkg.Gemini(ctx)
+		_, _, err := pkg.Gemini(ctx)
 		if err != nil {
 			log.Fatal(err)
 			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
