@@ -17,7 +17,7 @@ func Gemini(c context.Context) (*genai.GenerativeModel, *genai.Client) {
 		log.Fatal(err)
 		panic("Something went wrong")
 	}
-	
-		model := client.GenerativeModel("gemini-1.5-flash")
+
+	model := client.GenerativeModel("gemini-1.5-flash")
 	return model, client
 }
