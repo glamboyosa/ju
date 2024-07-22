@@ -3,6 +3,7 @@ package handlers
 import (
 	"context"
 	"lambdas/api/presenter"
+	"lambdas/api/response"
 	"lambdas/pkg"
 	"log"
 
@@ -36,18 +37,10 @@ func Generate() fiber.Handler {
 			})
 		}
 		if body.Text == "" {
-			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-				"status":  "Error",
-				"message": "Expected text",
-				"data":    []string{},
-			})
+			return response.Error("Expected text",  []string{}).Send(c, fiber.StatusBadRequest)
 		}
-		return c.JSON(fiber.Map{
-			"status":  "Success",
-			"message": "Expected text",
-			"data": []string{
-				body.Text,
-			},
-		})
+		return response.Success("Success",[]string{
+			body.Text,
+		} ).Send(c, fiber.StatusOK)
 	}
 }
