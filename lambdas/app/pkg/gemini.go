@@ -31,7 +31,7 @@ Please rewrite the text according to these instructions.
 	// Access your API key as an environment variable (see "Set up your API key" above)
 	client, err := genai.NewClient(ctx, option.WithAPIKey(os.Getenv("API_KEY")))
 	if err != nil {
-		
+
 		return nil, nil, fmt.Errorf("error creating client: %v", err)
 	}
 

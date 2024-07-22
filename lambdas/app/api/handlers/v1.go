@@ -37,10 +37,10 @@ func Generate() fiber.Handler {
 			})
 		}
 		if body.Text == "" {
-			return response.Error("Expected text",  []string{}).Send(c, fiber.StatusBadRequest)
+			return response.Error("Expected text", []string{}).Send(c, fiber.StatusBadRequest)
 		}
-		return response.Success("Success",[]string{
+		return response.Success("Success", []string{
 			body.Text,
-		} ).Send(c, fiber.StatusOK)
+		}).Send(c, fiber.StatusOK)
 	}
 }
