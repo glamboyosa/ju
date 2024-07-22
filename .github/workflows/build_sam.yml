@@ -33,8 +33,10 @@ jobs:
 
       - name: Build SAM application
         run: |
+          cd lambdas
           sam build
 
       - name: Validate SAM template
         run: |
+          cd lambdas
           sam validate
