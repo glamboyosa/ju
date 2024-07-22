@@ -27,6 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd lambdas
           cd app
           go mod tidy
 
