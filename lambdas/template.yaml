@@ -7,8 +7,8 @@ Description: >
 
 Globals:
   Function:
-    Timeout: 60
-    MemorySize: 256
+    Timeout: 900
+    MemorySize: 1024
 
 Resources:
   LambdaFunction:
@@ -24,6 +24,14 @@ Resources:
       Environment:
         Variables:
           PARAM1: VALUE
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+            Auth:
+              ApiKeyRequired: false
 
   LambdaFunctionRole:
     Type: AWS::IAM::Role

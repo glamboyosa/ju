@@ -18,7 +18,7 @@ clean:
 
 # Run locally
 local-start:
-	sam build --use-container && sam local start-api
+	sam build && sam local start-api
 
 
 .PHONY: build deploy clean local-start lint lint-only
