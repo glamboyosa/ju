@@ -16,7 +16,7 @@ Resources:
     Metadata:
       BuildMethod: go1.x
     Properties:
-      FunctionName: ju-serverless-app
+      FunctionName: ju-lambda-go-fiber
       CodeUri: app/
       Handler: bootstrap
       Runtime: go1.x
