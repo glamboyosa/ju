@@ -6,9 +6,8 @@ on:
   pull_request:
 
 permissions:
-  contents: read
-  # Optional: allow read access to pull request. Use with `only-new-issues` option.
-  # pull-requests: read
+  contents: write
+  pull-requests: read
 
 jobs:
   build:
@@ -23,11 +22,7 @@ jobs:
           go-version: stable
 
       - name: Install dependencies
-        run: cd lambdas && go mod tidy
-
-    #   - name: Run tests
-    #     run: go test ./...
-
+        run: cd lambdas && cd app && go mod tidy
   golangci:
     name: Lint
     runs-on: ubuntu-latest
@@ -44,5 +39,5 @@ jobs:
         uses: golangci/golangci-lint-action@v6
         with:
           version: v1.59
-          working-directory: ./lambdas
+          working-directory: ./lambdas/app
           args: --config ./.golangci.yml

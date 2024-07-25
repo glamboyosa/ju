@@ -3,6 +3,7 @@ package main
 
 import (
 	"context"
+	"lambdas/api/routes"
 	"log"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -17,7 +18,9 @@ var fiberLambda *fiberadapter.FiberLambda
 func init() {
 	log.Printf("Fiber cold start")
 	var app *fiber.App = fiber.New()
-
+	api := app.Group("/api") // /api
+	v1 := api.Group("v1")
+	routes.V1Router(v1)
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("Hello, World!")
 	})
@@ -32,6 +35,7 @@ func Handler(ctx context.Context, req events.APIGatewayProxyRequest) (events.API
 }
 
 func main() {
+
 	// Make the handler available for Remote Procedure Call by AWS Lambda
 	lambda.Start(Handler)
 }
