@@ -30,8 +30,6 @@ Resources:
           Properties:
             Path: /{proxy+}
             Method: ANY
-            Auth:
-              ApiKeyRequired: false
 
   LambdaFunctionRole:
     Type: AWS::IAM::Role
@@ -66,14 +64,12 @@ Resources:
         AllowMethods: ["GET", "POST", "PUT", "DELETE", "PATCH"]
         AllowOrigins: ["*"]
         AllowHeaders:
-          [
-            "Content-Type",
-            "Authorization",
-            "X-Amz-Date",
-            "X-Api-Key",
-            "X-Amz-Security-Token",
-            "X-Amz-User-Agent",
-          ]
+          - "Content-Type"
+          - "Authorization"
+          - "X-Amz-Date"
+          - "X-Api-Key"
+          - "X-Amz-Security-Token"
+          - "X-Amz-User-Agent"
 
 Outputs:
   Endpoint:
