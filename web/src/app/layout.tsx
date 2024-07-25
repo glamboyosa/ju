@@ -25,7 +25,7 @@ export default function RootLayout({
 					"bg-white text-white dark:bg-black dark:text-white",
 				)}
 			>
-				<ThemeProvider attribute="class">
+				<ThemeProvider enableSystem attribute="class">
 					<Nav />
 					{children}
 					<Toaster />
