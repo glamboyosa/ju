@@ -5,7 +5,7 @@ import { Toaster } from "sonner";
 import Nav from "@/components/nav/nav";
 import { marker } from "@/lib/font";
 import { cn } from "@/lib/utils";
-
+import { ClerkProvider } from "@clerk/nextjs";
 export const metadata: Metadata = {
 	title: "Jū",
 	description:
@@ -18,19 +18,21 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
-			<body
-				className={cn(
-					marker.className,
-					"bg-white text-white dark:bg-black dark:text-white",
-				)}
-			>
-				<ThemeProvider attribute="class">
-					<Nav />
-					{children}
-					<Toaster />
-				</ThemeProvider>
-			</body>
-		</html>
+		<ClerkProvider>
+			<html lang="en" suppressHydrationWarning>
+				<body
+					className={cn(
+						marker.className,
+						"bg-white text-white dark:bg-black dark:text-white",
+					)}
+				>
+					<ThemeProvider enableSystem attribute="class">
+						<Nav />
+						{children}
+						<Toaster />
+					</ThemeProvider>
+				</body>
+			</html>
+		</ClerkProvider>
 	);
 }
